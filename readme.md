@@ -50,7 +50,7 @@ and run the job in application mode via
 -Dkubernetes.service-account=flink-service-account \
 -Dparallelism.default=2 \
 -Dexecution.runtime-mode=BATCH \
--Ds3.endpoint=http://127.0.0.1:9000 \
+-Ds3.endpoint=http://flink-service:9000 \
 -Ds3.path-style=true \
 -Ds3.access-key=minioadmin \
 -Ds3.secret-key=minioadmin \

@@ -18,3 +18,15 @@ spec:
       imagePullPolicy: IfNotPresent
   restartPolicy: Always
   serviceAccountName: flink-service-account
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: flink-service
+spec:
+  selector:
+    app: flink-pod
+  ports:
+    - port: 9000 # Default port for image
