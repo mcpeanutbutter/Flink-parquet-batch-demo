@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'demo'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 mainClassName = 'demo.Job'
 description = """Flink Quickstart Job"""
 ext {
@@ -53,11 +53,13 @@ dependencies {
     implementation "org.apache.flink:flink-connector-files:${flinkVersion}"
     // Dependencies that should be part of the shadow jar
     flinkShadowJar "org.apache.flink:flink-parquet:${flinkVersion}"
-    flinkShadowJar('org.apache.parquet:parquet-avro:1.12.3') {
+    flinkShadowJar('org.apache.parquet:parquet-avro:1.12.2') {
         exclude group: "org.apache.hadoop", module: "hadoop-client"
         exclude group: "it.unimi.dsi", module: "fastutil"
     }
-    flinkShadowJar "org.xerial.snappy:snappy-java:1.1.8.4"
+    flinkShadowJar ("org.xerial.snappy:snappy-java:1.1.8.4") {
+        exclude group: "org.osgi", module: "core"
+    }
 
     runtimeOnly "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
     runtimeOnly "org.apache.logging.log4j:log4j-api:${log4jVersion}"

@@ -6,7 +6,7 @@ import org.apache.flink.connector.file.sink.FileSink
 import org.apache.flink.core.fs.Path
 import org.apache.flink.formats.parquet.avro.AvroParquetWriters
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
-import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.BasePathBucketAssigner
+import org.apache.flink.table.api.Expressions.col
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment
 import org.apache.flink.types.Row
 
@@ -25,10 +25,7 @@ object Job {
         val tableEnv = StreamTableEnvironment.create(env)
 
         val query = """
-            CREATE TABLE data (
-                letter STRING,
-                timedigit BIGINT
-            ) WITH (
+            CREATE TABLE data (letter STRING, timedigit BIGINT) WITH (
                 'connector' = 'filesystem',
                 'path' = '${inputPath}',
                 'format' = 'parquet'
@@ -41,7 +38,6 @@ object Job {
 
         val parquetSink = FileSink
             .forBulkFormat(Path(outputPath), AvroParquetWriters.forReflectRecord(Data::class.java))
-            .withBucketAssigner(BasePathBucketAssigner())
             .build()
 
         tableEnv
@@ -55,5 +51,3 @@ object Job {
         env.execute("Read from and write to parquet")
     }
 }
-
-
