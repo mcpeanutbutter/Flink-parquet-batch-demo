@@ -1,0 +1,476 @@
+sed: couldn't open temporary file /opt/flink/conf/sedKQFofW: Read-only file system
+sed: couldn't open temporary file /opt/flink/conf/sed0UsI3j: Read-only file system
+/docker-entrypoint.sh: line 73: /opt/flink/conf/flink-conf.yaml: Permission denied
+/docker-entrypoint.sh: line 89: /opt/flink/conf/flink-conf.yaml.tmp: Read-only file system
+Starting kubernetes-application as a console application on host flink-application-cluster-7f995b6bb6-bvc5m.
+2022-11-28 09:29:32,507 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - --------------------------------------------------------------------------------
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Preconfiguration:
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -
+
+
+RESOURCE_PARAMS extraction logs:
+jvm_params: -Xmx1073741824 -Xms1073741824 -XX:MaxMetaspaceSize=268435456
+dynamic_configs: -D jobmanager.memory.off-heap.size=134217728b -D jobmanager.memory.jvm-overhead.min=201326592b -D jobmanager.memory.jvm-metaspace.size=268435456b -D jobmanager.memory.heap.size=1073741824b -D jobmanager.memory.jvm-overhead.max=201326592b
+logs: WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+WARN  [] - Error while trying to split key and value in configuration file /opt/flink/conf/flink-conf.yaml:14: "pipeline.classpaths: "
+INFO  [] - Loading configuration property: blob.server.port, 6124
+INFO  [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+INFO  [] - Loading configuration property: jobmanager.rpc.address, flink-application-cluster.default
+INFO  [] - Loading configuration property: execution.runtime-mode, BATCH
+INFO  [] - Loading configuration property: kubernetes.cluster-id, flink-application-cluster
+INFO  [] - Loading configuration property: kubernetes.service-account, flink-service-account
+INFO  [] - Loading configuration property: s3.secret-key, ******
+INFO  [] - Loading configuration property: s3.endpoint, http://flink-service:9000
+INFO  [] - Loading configuration property: execution.savepoint.ignore-unclaimed-state, false
+INFO  [] - Loading configuration property: $internal.application.program-args, --input_path;s3a://data/parquet-data/;--output_path;s3a://data/output-data/
+INFO  [] - Loading configuration property: kubernetes.container.image, flink-custom:latest
+INFO  [] - Loading configuration property: parallelism.default, 2
+INFO  [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+INFO  [] - Loading configuration property: s3.path-style, true
+INFO  [] - Loading configuration property: $internal.application.main, demo.Job
+INFO  [] - Loading configuration property: taskmanager.memory.process.size, 1728m
+INFO  [] - Loading configuration property: kubernetes.internal.jobmanager.entrypoint.class, org.apache.flink.kubernetes.entrypoint.KubernetesApplicationClusterEntrypoint
+INFO  [] - Loading configuration property: execution.savepoint-restore-mode, NO_CLAIM
+INFO  [] - Loading configuration property: execution.target, kubernetes-application
+INFO  [] - Loading configuration property: jobmanager.memory.process.size, 1600m
+INFO  [] - Loading configuration property: jobmanager.rpc.port, 6123
+INFO  [] - Loading configuration property: taskmanager.rpc.port, 6122
+INFO  [] - Loading configuration property: s3.access-key, minioadmin
+INFO  [] - Loading configuration property: execution.attached, true
+INFO  [] - Loading configuration property: internal.cluster.execution-mode, NORMAL
+INFO  [] - Loading configuration property: execution.shutdown-on-attached-exit, false
+INFO  [] - Loading configuration property: pipeline.jars, local:///opt/flink/usrlib/flink-parquet-batch-demo.jar
+INFO  [] - Loading configuration property: rest.address, 0.0.0.0
+INFO  [] - The derived from fraction jvm overhead memory (160.000mb (167772162 bytes)) is less than its min value 192.000mb (201326592 bytes), min value will be used instead
+INFO  [] - Final Master Memory configuration:
+INFO  [] -   Total Process Memory: 1.563gb (1677721600 bytes)
+INFO  [] -     Total Flink Memory: 1.125gb (1207959552 bytes)
+INFO  [] -       JVM Heap:         1024.000mb (1073741824 bytes)
+INFO  [] -       Off-heap:         128.000mb (134217728 bytes)
+INFO  [] -     JVM Metaspace:      256.000mb (268435456 bytes)
+INFO  [] -     JVM Overhead:       192.000mb (201326592 bytes)
+
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - --------------------------------------------------------------------------------
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Starting KubernetesApplicationClusterEntrypoint (Version: 1.16.0, Scala: 2.12, Rev:af6eff8, Date:2022-10-20T04:21:45+02:00)
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  OS current user: flink
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Current Hadoop/Kerberos user: <no hadoop dependency found>
+2022-11-28 09:29:32,509 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  JVM: OpenJDK 64-Bit Server VM - Eclipse Adoptium - 11/11.0.17+8
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Arch: amd64
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Maximum heap size: 989 MiBytes
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  JAVA_HOME: /opt/java/openjdk
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  No Hadoop Dependency available
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  JVM Options:
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -Xmx1073741824
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -Xms1073741824
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -XX:MaxMetaspaceSize=268435456
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -Dlog.file=/opt/flink/log/flink--kubernetes-application-0-flink-application-cluster-7f995b6bb6-bvc5m.log
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -Dlog4j.configuration=file:/opt/flink/conf/log4j-console.properties
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -Dlog4j.configurationFile=file:/opt/flink/conf/log4j-console.properties
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -Dlogback.configurationFile=file:/opt/flink/conf/logback-console.xml
+2022-11-28 09:29:32,510 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Program Arguments:
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -D
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     jobmanager.memory.off-heap.size=134217728b
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -D
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     jobmanager.memory.jvm-overhead.min=201326592b
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -D
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     jobmanager.memory.jvm-metaspace.size=268435456b
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -D
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     jobmanager.memory.heap.size=1073741824b
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     -D
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -     jobmanager.memory.jvm-overhead.max=201326592b
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] -  Classpath: /opt/flink/lib/flink-cep-1.16.0.jar:/opt/flink/lib/flink-connector-files-1.16.0.jar:/opt/flink/lib/flink-csv-1.16.0.jar:/opt/flink/lib/flink-json-1.16.0.jar:/opt/flink/lib/flink-scala_2.12-1.16.0.jar:/opt/flink/lib/flink-shaded-zookeeper-3.5.9.jar:/opt/flink/lib/flink-table-api-java-uber-1.16.0.jar:/opt/flink/lib/flink-table-planner-loader-1.16.0.jar:/opt/flink/lib/flink-table-runtime-1.16.0.jar:/opt/flink/lib/kotlin-stdlib-1.7.21.jar:/opt/flink/lib/log4j-1.2-api-2.17.1.jar:/opt/flink/lib/log4j-api-2.17.1.jar:/opt/flink/lib/log4j-core-2.17.1.jar:/opt/flink/lib/log4j-slf4j-impl-2.17.1.jar:/opt/flink/lib/flink-dist-1.16.0.jar::::
+2022-11-28 09:29:32,511 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - --------------------------------------------------------------------------------
+2022-11-28 09:29:32,512 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Registered UNIX signal handlers for [TERM, HUP, INT]
+2022-11-28 09:29:32,516 WARN  org.apache.flink.configuration.GlobalConfiguration           [] - Error while trying to split key and value in configuration file /opt/flink/conf/flink-conf.yaml:14: "pipeline.classpaths: "
+2022-11-28 09:29:32,517 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: blob.server.port, 6124
+2022-11-28 09:29:32,517 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+2022-11-28 09:29:32,517 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.address, flink-application-cluster.default
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.runtime-mode, BATCH
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.cluster-id, flink-application-cluster
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.service-account, flink-service-account
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.secret-key, ******
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.endpoint, http://flink-service:9000
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.savepoint.ignore-unclaimed-state, false
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.application.program-args, --input_path;s3a://data/parquet-data/;--output_path;s3a://data/output-data/
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.container.image, flink-custom:latest
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: parallelism.default, 2
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.path-style, true
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.application.main, demo.Job
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.memory.process.size, 1728m
+2022-11-28 09:29:32,518 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.internal.jobmanager.entrypoint.class, org.apache.flink.kubernetes.entrypoint.KubernetesApplicationClusterEntrypoint
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.savepoint-restore-mode, NO_CLAIM
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.target, kubernetes-application
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.process.size, 1600m
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.port, 6123
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.rpc.port, 6122
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.access-key, minioadmin
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.attached, true
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: internal.cluster.execution-mode, NORMAL
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.shutdown-on-attached-exit, false
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: pipeline.jars, local:///opt/flink/usrlib/flink-parquet-batch-demo.jar
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: rest.address, 0.0.0.0
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.off-heap.size, 134217728b
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.jvm-overhead.min, 201326592b
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.jvm-metaspace.size, 268435456b
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.heap.size, 1073741824b
+2022-11-28 09:29:32,519 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading dynamic configuration property: jobmanager.memory.jvm-overhead.max, 201326592b
+2022-11-28 09:29:32,698 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Starting KubernetesApplicationClusterEntrypoint.
+2022-11-28 09:29:32,706 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Install default filesystem.
+2022-11-28 09:29:32,707 INFO  org.apache.flink.core.fs.FileSystem                          [] - Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2022-11-28 09:29:32,798 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Install security context.
+2022-11-28 09:29:32,802 INFO  org.apache.flink.runtime.security.modules.HadoopModuleFactory [] - Cannot create Hadoop Security Module because Hadoop cannot be found in the Classpath.
+2022-11-28 09:29:32,804 INFO  org.apache.flink.runtime.security.modules.JaasModule         [] - Jaas file will be created as /tmp/jaas-3266085201074879833.conf.
+2022-11-28 09:29:32,807 INFO  org.apache.flink.runtime.security.contexts.HadoopSecurityContextFactory [] - Cannot install HadoopSecurityContext because Hadoop cannot be found in the Classpath.
+2022-11-28 09:29:32,808 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Initializing cluster services.
+2022-11-28 09:29:32,810 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Using working directory: WorkingDirectory(/tmp/jm_6321e64555a0b95e806862966839d201).
+2022-11-28 09:29:33,132 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Trying to start actor system, external address flink-application-cluster.default:6123, bind address 0.0.0.0:6123.
+2022-11-28 09:29:33,812 INFO  akka.event.slf4j.Slf4jLogger                                 [] - Slf4jLogger started
+2022-11-28 09:29:33,826 INFO  akka.remote.RemoteActorRefProvider                           [] - Akka Cluster not in use - enabling unsafe features anyway because `akka.remote.use-unsafe-remote-features-outside-cluster` has been enabled.
+2022-11-28 09:29:33,826 INFO  akka.remote.Remoting                                         [] - Starting remoting
+2022-11-28 09:29:33,990 INFO  akka.remote.Remoting                                         [] - Remoting started; listening on addresses :[akka.tcp://flink@flink-application-cluster.default:6123]
+2022-11-28 09:29:34,122 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Actor system started at akka.tcp://flink@flink-application-cluster.default:6123
+2022-11-28 09:29:34,138 INFO  org.apache.flink.runtime.blob.BlobServer                     [] - Created BLOB server storage directory /tmp/jm_6321e64555a0b95e806862966839d201/blobStorage
+2022-11-28 09:29:34,139 INFO  org.apache.flink.runtime.blob.BlobServer                     [] - Started BLOB server at 0.0.0.0:6124 - max concurrent requests: 50 - max backlog: 1000
+2022-11-28 09:29:34,140 INFO  org.apache.flink.runtime.security.token.KerberosDelegationTokenManagerFactory [] - Cannot use kerberos delegation token manager because Hadoop cannot be found in the Classpath.
+2022-11-28 09:29:34,181 INFO  org.apache.flink.runtime.metrics.MetricRegistryImpl          [] - No metrics reporter configured, no metrics will be exposed/reported.
+2022-11-28 09:29:34,183 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Trying to start actor system, external address flink-application-cluster.default:0, bind address 0.0.0.0:0.
+2022-11-28 09:29:34,192 INFO  akka.event.slf4j.Slf4jLogger                                 [] - Slf4jLogger started
+2022-11-28 09:29:34,194 INFO  akka.remote.RemoteActorRefProvider                           [] - Akka Cluster not in use - enabling unsafe features anyway because `akka.remote.use-unsafe-remote-features-outside-cluster` has been enabled.
+2022-11-28 09:29:34,194 INFO  akka.remote.Remoting                                         [] - Starting remoting
+2022-11-28 09:29:34,198 INFO  akka.remote.Remoting                                         [] - Remoting started; listening on addresses :[akka.tcp://flink-metrics@flink-application-cluster.default:43997]
+2022-11-28 09:29:34,202 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Actor system started at akka.tcp://flink-metrics@flink-application-cluster.default:43997
+2022-11-28 09:29:34,208 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcService             [] - Starting RPC endpoint for org.apache.flink.runtime.metrics.dump.MetricQueryService at akka://flink-metrics/user/rpc/MetricQueryService .
+2022-11-28 09:29:34,297 INFO  org.apache.flink.runtime.jobmaster.MiniDispatcherRestEndpoint [] - Upload directory /tmp/flink-web-a3e14e48-88fa-44cc-81e7-0b325e98ef50/flink-web-upload does not exist.
+2022-11-28 09:29:34,297 INFO  org.apache.flink.runtime.jobmaster.MiniDispatcherRestEndpoint [] - Created directory /tmp/flink-web-a3e14e48-88fa-44cc-81e7-0b325e98ef50/flink-web-upload for file uploads.
+2022-11-28 09:29:34,298 INFO  org.apache.flink.runtime.jobmaster.MiniDispatcherRestEndpoint [] - Starting rest endpoint.
+2022-11-28 09:29:34,424 INFO  org.apache.flink.runtime.webmonitor.WebMonitorUtils          [] - Determined location of main cluster component log file: /opt/flink/log/flink--kubernetes-application-0-flink-application-cluster-7f995b6bb6-bvc5m.log
+2022-11-28 09:29:34,425 INFO  org.apache.flink.runtime.webmonitor.WebMonitorUtils          [] - Determined location of main cluster component stdout file: /opt/flink/log/flink--kubernetes-application-0-flink-application-cluster-7f995b6bb6-bvc5m.out
+2022-11-28 09:29:34,591 INFO  org.apache.flink.runtime.jobmaster.MiniDispatcherRestEndpoint [] - Rest endpoint listening at 0.0.0.0:8081
+2022-11-28 09:29:34,592 INFO  org.apache.flink.runtime.jobmaster.MiniDispatcherRestEndpoint [] - http://0.0.0.0:8081 was granted leadership with leaderSessionID=00000000-0000-0000-0000-000000000000
+2022-11-28 09:29:34,593 INFO  org.apache.flink.runtime.jobmaster.MiniDispatcherRestEndpoint [] - Web frontend listening at http://0.0.0.0:8081.
+2022-11-28 09:29:34,599 INFO  org.apache.flink.runtime.util.config.memory.ProcessMemoryUtils [] - The derived from fraction jvm overhead memory (172.800mb (181193935 bytes)) is less than its min value 192.000mb (201326592 bytes), min value will be used instead
+2022-11-28 09:29:34,606 INFO  org.apache.flink.runtime.dispatcher.runner.DefaultDispatcherRunner [] - DefaultDispatcherRunner was granted leadership with leader id 00000000-0000-0000-0000-000000000000. Creating new DispatcherLeaderProcess.
+2022-11-28 09:29:34,609 INFO  org.apache.flink.runtime.dispatcher.runner.SessionDispatcherLeaderProcess [] - Start SessionDispatcherLeaderProcess.
+2022-11-28 09:29:34,609 INFO  org.apache.flink.runtime.resourcemanager.ResourceManagerServiceImpl [] - Starting resource manager service.
+2022-11-28 09:29:34,610 INFO  org.apache.flink.runtime.resourcemanager.ResourceManagerServiceImpl [] - Resource manager service is granted leadership with session id 00000000-0000-0000-0000-000000000000.
+2022-11-28 09:29:34,611 INFO  org.apache.flink.runtime.dispatcher.runner.SessionDispatcherLeaderProcess [] - Recover all persisted job graphs that are not finished, yet.
+2022-11-28 09:29:34,611 INFO  org.apache.flink.runtime.dispatcher.runner.SessionDispatcherLeaderProcess [] - Successfully recovered 0 persisted job graphs.
+2022-11-28 09:29:34,683 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcService             [] - Starting RPC endpoint for org.apache.flink.runtime.dispatcher.StandaloneDispatcher at akka://flink/user/rpc/dispatcher_0 .
+2022-11-28 09:29:34,696 INFO  org.apache.flink.client.ClientUtils                          [] - Starting program (detached: false)
+2022-11-28 09:29:35,203 WARN  org.apache.flink.configuration.GlobalConfiguration           [] - Error while trying to split key and value in configuration file /opt/flink/conf/flink-conf.yaml:14: "pipeline.classpaths: "
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: blob.server.port, 6124
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.address, flink-application-cluster.default
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.runtime-mode, BATCH
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.cluster-id, flink-application-cluster
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.service-account, flink-service-account
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.secret-key, ******
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.endpoint, http://flink-service:9000
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.savepoint.ignore-unclaimed-state, false
+2022-11-28 09:29:35,203 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.application.program-args, --input_path;s3a://data/parquet-data/;--output_path;s3a://data/output-data/
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.container.image, flink-custom:latest
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: parallelism.default, 2
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.path-style, true
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: $internal.application.main, demo.Job
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.memory.process.size, 1728m
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: kubernetes.internal.jobmanager.entrypoint.class, org.apache.flink.kubernetes.entrypoint.KubernetesApplicationClusterEntrypoint
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.savepoint-restore-mode, NO_CLAIM
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.target, kubernetes-application
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.process.size, 1600m
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.port, 6123
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.rpc.port, 6122
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: s3.access-key, minioadmin
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.attached, true
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: internal.cluster.execution-mode, NORMAL
+2022-11-28 09:29:35,204 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.shutdown-on-attached-exit, false
+2022-11-28 09:29:35,205 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: pipeline.jars, local:///opt/flink/usrlib/flink-parquet-batch-demo.jar
+2022-11-28 09:29:35,205 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: rest.address, 0.0.0.0
+2022-11-28 09:29:35,282 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcService             [] - Starting RPC endpoint for org.apache.flink.runtime.resourcemanager.active.ActiveResourceManager at akka://flink/user/rpc/resourcemanager_1 .
+2022-11-28 09:29:35,288 INFO  org.apache.flink.runtime.resourcemanager.active.ActiveResourceManager [] - Starting the resource manager.
+2022-11-28 09:29:36,593 INFO  org.apache.flink.kubernetes.KubernetesResourceManagerDriver  [] - Recovered 0 pods from previous attempts, current attempt id is 1.
+2022-11-28 09:29:36,593 INFO  org.apache.flink.runtime.resourcemanager.active.ActiveResourceManager [] - Recovered 0 workers from previous attempt.
+2022-11-28 09:29:37,125 WARN  org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap [] - Application failed unexpectedly:
+java.util.concurrent.CompletionException: org.apache.flink.client.deployment.application.ApplicationExecutionException: Could not execute application.
+	at java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture.completeExceptionally(Unknown Source) ~[?:?]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.runApplicationEntryPoint(ApplicationDispatcherBootstrap.java:337) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.lambda$runApplicationAsync$2(ApplicationDispatcherBootstrap.java:254) ~[flink-dist-1.16.0.jar:1.16.0]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:?]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
+	at org.apache.flink.runtime.concurrent.akka.ActorSystemScheduledExecutorAdapter$ScheduledFutureTask.run(ActorSystemScheduledExecutorAdapter.java:171) ~[flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at org.apache.flink.runtime.concurrent.akka.ClassLoadingUtils.runWithContextClassLoader(ClassLoadingUtils.java:68) ~[flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at org.apache.flink.runtime.concurrent.akka.ClassLoadingUtils.lambda$withContextClassLoader$0(ClassLoadingUtils.java:41) ~[flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:49) [flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:48) [flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at java.util.concurrent.ForkJoinTask.doExec(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinPool.scan(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source) [?:?]
+Caused by: org.apache.flink.client.deployment.application.ApplicationExecutionException: Could not execute application.
+	... 14 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/hadoop/conf/Configuration
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.getParquetConfiguration(ParquetFileFormatFactory.java:98) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.access$000(ParquetFileFormatFactory.java:58) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:142) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:123) ~[?:?]
+	at org.apache.flink.connector.file.table.FileSystemTableSource.getScanRuntimeProvider(FileSystemTableSource.java:169) ~[flink-connector-files-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.validateScanSource(DynamicSourceUtils.java:462) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.prepareDynamicSource(DynamicSourceUtils.java:158) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.convertSourceToRel(DynamicSourceUtils.java:122) ~[?:?]
+	at org.apache.flink.table.planner.plan.schema.CatalogSourceTable.toRel(CatalogSourceTable.java:118) ~[?:?]
+	at org.apache.calcite.rel.core.RelFactories$TableScanFactoryImpl.createScan(RelFactories.java:495) ~[?:?]
+	at org.apache.calcite.tools.RelBuilder.scan(RelBuilder.java:1099) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:366) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:158) ~[?:?]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:155) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:92) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.lambda$defaultMethod$0(QueryOperationConverter.java:154) ~[?:?]
+	at java.util.Collections$SingletonList.forEach(Unknown Source) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:154) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:47) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.ProjectQueryOperation.accept(ProjectQueryOperation.java:76) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.calcite.FlinkRelBuilder.queryOperation(FlinkRelBuilder.java:259) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translateToRel(PlannerBase.scala:275) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.$anonfun$translate$1(PlannerBase.scala:194) ~[?:?]
+	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach$(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1425) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach(IterableLike.scala:70) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach$(IterableLike.scala:69) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map$(TraversableLike.scala:226) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translate(PlannerBase.scala:194) ~[?:?]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:224) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:219) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:253) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:226) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at demo.Job.main(Job.kt:44) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.apache.flink.client.program.PackagedProgram.callMainMethod(PackagedProgram.java:355) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.program.PackagedProgram.invokeInteractiveModeForExecution(PackagedProgram.java:222) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.ClientUtils.executeProgram(ClientUtils.java:98) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.runApplicationEntryPoint(ApplicationDispatcherBootstrap.java:301) ~[flink-dist-1.16.0.jar:1.16.0]
+	... 13 more
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.conf.Configuration
+	at java.net.URLClassLoader.findClass(Unknown Source) ~[?:?]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:?]
+	at org.apache.flink.util.FlinkUserCodeClassLoader.loadClassWithoutExceptionHandling(FlinkUserCodeClassLoader.java:67) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.util.ChildFirstClassLoader.loadClassWithoutExceptionHandling(ChildFirstClassLoader.java:65) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.util.FlinkUserCodeClassLoader.loadClass(FlinkUserCodeClassLoader.java:51) ~[flink-dist-1.16.0.jar:1.16.0]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.getParquetConfiguration(ParquetFileFormatFactory.java:98) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.access$000(ParquetFileFormatFactory.java:58) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:142) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:123) ~[?:?]
+	at org.apache.flink.connector.file.table.FileSystemTableSource.getScanRuntimeProvider(FileSystemTableSource.java:169) ~[flink-connector-files-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.validateScanSource(DynamicSourceUtils.java:462) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.prepareDynamicSource(DynamicSourceUtils.java:158) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.convertSourceToRel(DynamicSourceUtils.java:122) ~[?:?]
+	at org.apache.flink.table.planner.plan.schema.CatalogSourceTable.toRel(CatalogSourceTable.java:118) ~[?:?]
+	at org.apache.calcite.rel.core.RelFactories$TableScanFactoryImpl.createScan(RelFactories.java:495) ~[?:?]
+	at org.apache.calcite.tools.RelBuilder.scan(RelBuilder.java:1099) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:366) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:158) ~[?:?]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:155) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:92) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.lambda$defaultMethod$0(QueryOperationConverter.java:154) ~[?:?]
+	at java.util.Collections$SingletonList.forEach(Unknown Source) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:154) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:47) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.ProjectQueryOperation.accept(ProjectQueryOperation.java:76) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.calcite.FlinkRelBuilder.queryOperation(FlinkRelBuilder.java:259) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translateToRel(PlannerBase.scala:275) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.$anonfun$translate$1(PlannerBase.scala:194) ~[?:?]
+	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach$(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1425) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach(IterableLike.scala:70) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach$(IterableLike.scala:69) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map$(TraversableLike.scala:226) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translate(PlannerBase.scala:194) ~[?:?]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:224) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:219) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:253) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:226) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at demo.Job.main(Job.kt:44) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.apache.flink.client.program.PackagedProgram.callMainMethod(PackagedProgram.java:355) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.program.PackagedProgram.invokeInteractiveModeForExecution(PackagedProgram.java:222) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.ClientUtils.executeProgram(ClientUtils.java:98) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.runApplicationEntryPoint(ApplicationDispatcherBootstrap.java:301) ~[flink-dist-1.16.0.jar:1.16.0]
+	... 13 more
+2022-11-28 09:29:37,184 ERROR org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Fatal error occurred in the cluster entrypoint.
+java.util.concurrent.CompletionException: org.apache.flink.client.deployment.application.ApplicationExecutionException: Could not execute application.
+	at java.util.concurrent.CompletableFuture.encodeThrowable(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture.completeThrowable(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture.postComplete(Unknown Source) ~[?:?]
+	at java.util.concurrent.CompletableFuture.completeExceptionally(Unknown Source) ~[?:?]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.runApplicationEntryPoint(ApplicationDispatcherBootstrap.java:337) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.lambda$runApplicationAsync$2(ApplicationDispatcherBootstrap.java:254) ~[flink-dist-1.16.0.jar:1.16.0]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:?]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
+	at org.apache.flink.runtime.concurrent.akka.ActorSystemScheduledExecutorAdapter$ScheduledFutureTask.run(ActorSystemScheduledExecutorAdapter.java:171) ~[flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at org.apache.flink.runtime.concurrent.akka.ClassLoadingUtils.runWithContextClassLoader(ClassLoadingUtils.java:68) ~[flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at org.apache.flink.runtime.concurrent.akka.ClassLoadingUtils.lambda$withContextClassLoader$0(ClassLoadingUtils.java:41) ~[flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:49) [flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:48) [flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar:1.16.0]
+	at java.util.concurrent.ForkJoinTask.doExec(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinPool.scan(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source) [?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source) [?:?]
+Caused by: org.apache.flink.client.deployment.application.ApplicationExecutionException: Could not execute application.
+	... 14 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/hadoop/conf/Configuration
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.getParquetConfiguration(ParquetFileFormatFactory.java:98) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.access$000(ParquetFileFormatFactory.java:58) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:142) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:123) ~[?:?]
+	at org.apache.flink.connector.file.table.FileSystemTableSource.getScanRuntimeProvider(FileSystemTableSource.java:169) ~[flink-connector-files-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.validateScanSource(DynamicSourceUtils.java:462) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.prepareDynamicSource(DynamicSourceUtils.java:158) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.convertSourceToRel(DynamicSourceUtils.java:122) ~[?:?]
+	at org.apache.flink.table.planner.plan.schema.CatalogSourceTable.toRel(CatalogSourceTable.java:118) ~[?:?]
+	at org.apache.calcite.rel.core.RelFactories$TableScanFactoryImpl.createScan(RelFactories.java:495) ~[?:?]
+	at org.apache.calcite.tools.RelBuilder.scan(RelBuilder.java:1099) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:366) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:158) ~[?:?]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:155) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:92) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.lambda$defaultMethod$0(QueryOperationConverter.java:154) ~[?:?]
+	at java.util.Collections$SingletonList.forEach(Unknown Source) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:154) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:47) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.ProjectQueryOperation.accept(ProjectQueryOperation.java:76) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.calcite.FlinkRelBuilder.queryOperation(FlinkRelBuilder.java:259) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translateToRel(PlannerBase.scala:275) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.$anonfun$translate$1(PlannerBase.scala:194) ~[?:?]
+	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach$(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1425) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach(IterableLike.scala:70) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach$(IterableLike.scala:69) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map$(TraversableLike.scala:226) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translate(PlannerBase.scala:194) ~[?:?]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:224) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:219) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:253) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:226) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at demo.Job.main(Job.kt:44) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.apache.flink.client.program.PackagedProgram.callMainMethod(PackagedProgram.java:355) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.program.PackagedProgram.invokeInteractiveModeForExecution(PackagedProgram.java:222) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.ClientUtils.executeProgram(ClientUtils.java:98) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.runApplicationEntryPoint(ApplicationDispatcherBootstrap.java:301) ~[flink-dist-1.16.0.jar:1.16.0]
+	... 13 more
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.conf.Configuration
+	at java.net.URLClassLoader.findClass(Unknown Source) ~[?:?]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:?]
+	at org.apache.flink.util.FlinkUserCodeClassLoader.loadClassWithoutExceptionHandling(FlinkUserCodeClassLoader.java:67) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.util.ChildFirstClassLoader.loadClassWithoutExceptionHandling(ChildFirstClassLoader.java:65) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.util.FlinkUserCodeClassLoader.loadClass(FlinkUserCodeClassLoader.java:51) ~[flink-dist-1.16.0.jar:1.16.0]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.getParquetConfiguration(ParquetFileFormatFactory.java:98) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory.access$000(ParquetFileFormatFactory.java:58) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:142) ~[?:?]
+	at org.apache.flink.formats.parquet.ParquetFileFormatFactory$ParquetBulkDecodingFormat.createRuntimeDecoder(ParquetFileFormatFactory.java:123) ~[?:?]
+	at org.apache.flink.connector.file.table.FileSystemTableSource.getScanRuntimeProvider(FileSystemTableSource.java:169) ~[flink-connector-files-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.validateScanSource(DynamicSourceUtils.java:462) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.prepareDynamicSource(DynamicSourceUtils.java:158) ~[?:?]
+	at org.apache.flink.table.planner.connectors.DynamicSourceUtils.convertSourceToRel(DynamicSourceUtils.java:122) ~[?:?]
+	at org.apache.flink.table.planner.plan.schema.CatalogSourceTable.toRel(CatalogSourceTable.java:118) ~[?:?]
+	at org.apache.calcite.rel.core.RelFactories$TableScanFactoryImpl.createScan(RelFactories.java:495) ~[?:?]
+	at org.apache.calcite.tools.RelBuilder.scan(RelBuilder.java:1099) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:366) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter$SingleRelVisitor.visit(QueryOperationConverter.java:158) ~[?:?]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:155) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:92) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.SourceQueryOperation.accept(SourceQueryOperation.java:86) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.lambda$defaultMethod$0(QueryOperationConverter.java:154) ~[?:?]
+	at java.util.Collections$SingletonList.forEach(Unknown Source) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:154) ~[?:?]
+	at org.apache.flink.table.planner.plan.QueryOperationConverter.defaultMethod(QueryOperationConverter.java:135) ~[?:?]
+	at org.apache.flink.table.operations.utils.QueryOperationDefaultVisitor.visit(QueryOperationDefaultVisitor.java:47) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.operations.ProjectQueryOperation.accept(ProjectQueryOperation.java:76) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.calcite.FlinkRelBuilder.queryOperation(FlinkRelBuilder.java:259) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translateToRel(PlannerBase.scala:275) ~[?:?]
+	at org.apache.flink.table.planner.delegation.PlannerBase.$anonfun$translate$1(PlannerBase.scala:194) ~[?:?]
+	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.Iterator.foreach$(Iterator.scala:937) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1425) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach(IterableLike.scala:70) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.IterableLike.foreach$(IterableLike.scala:69) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map(TraversableLike.scala:233) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.TraversableLike.map$(TraversableLike.scala:226) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[flink-scala_2.12-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.planner.delegation.PlannerBase.translate(PlannerBase.scala:194) ~[?:?]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:224) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.internal.AbstractStreamTableEnvironmentImpl.toStreamInternal(AbstractStreamTableEnvironmentImpl.java:219) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:253) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at org.apache.flink.table.api.bridge.java.internal.StreamTableEnvironmentImpl.toDataStream(StreamTableEnvironmentImpl.java:226) ~[flink-table-api-java-uber-1.16.0.jar:1.16.0]
+	at demo.Job.main(Job.kt:44) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.apache.flink.client.program.PackagedProgram.callMainMethod(PackagedProgram.java:355) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.program.PackagedProgram.invokeInteractiveModeForExecution(PackagedProgram.java:222) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.ClientUtils.executeProgram(ClientUtils.java:98) ~[flink-dist-1.16.0.jar:1.16.0]
+	at org.apache.flink.client.deployment.application.ApplicationDispatcherBootstrap.runApplicationEntryPoint(ApplicationDispatcherBootstrap.java:301) ~[flink-dist-1.16.0.jar:1.16.0]
+	... 13 more
+2022-11-28 09:29:37,187 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Shutting KubernetesApplicationClusterEntrypoint down with application status UNKNOWN. Diagnostics Cluster entrypoint has been closed externally..
+2022-11-28 09:29:37,189 INFO  org.apache.flink.runtime.blob.BlobServer                     [] - Stopped BLOB server at 0.0.0.0:6124
+2022-11-28 09:29:37,292 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Shutting down remote daemon.
+2022-11-28 09:29:37,293 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Remote daemon shut down; proceeding with flushing remote transports.
+2022-11-28 09:29:37,293 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Shutting down remote daemon.
+2022-11-28 09:29:37,294 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Remote daemon shut down; proceeding with flushing remote transports.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.jboss.netty.util.internal.ByteBufferUtil (file:/tmp/flink-rpc-akka_d5d3adbc-9122-431a-af25-350f05127cd5.jar) to method java.nio.DirectByteBuffer.cleaner()
+WARNING: Please consider reporting this to the maintainers of org.jboss.netty.util.internal.ByteBufferUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2022-11-28 09:29:37,302 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Remoting shut down.
+2022-11-28 09:29:37,302 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Remoting shut down.

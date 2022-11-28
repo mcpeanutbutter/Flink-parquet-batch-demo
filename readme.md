@@ -1,3 +1,5 @@
+# Flink parquet batch demo
+This project is currently _not_ working state due to a problem with reading parquet files. Below are the steps to reproduce the bug:
 
 ### Building the docker images
 After starting minikube, run 
@@ -24,9 +26,9 @@ kubectl exec --stdin --tty flink-pod -c minio-custom -- /bin/bash
 ```
 Here, run the following commands to create a bucket and move some parquet and some csv files into it:
 ```shell
-mc alias set minio-custom http://127.0.0.1:9000 minioadmin minioadmin
-mc mb minio-custom/data
-mc cp --recursive /opt/parquet-data minio-custom/data
+mc alias set minio-custom http://127.0.0.1:9000 minioadmin minioadmin;\
+mc mb minio-custom/data;\
+mc cp --recursive /opt/parquet-data minio-custom/data;\
 mc cp --recursive /opt/csv-data minio-custom/data
 ```
 If you want to access the MiniO UI (optional), `exit` the container and run
